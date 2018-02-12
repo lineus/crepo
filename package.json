@@ -1,0 +1,26 @@
+{
+  "name": "crepo",
+  "version": "0.1.0",
+  "description": "uses github api to create a repo from the command line.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lineus/crepo.git"
+  },
+  "keywords": [
+    "github",
+    "create",
+    "repo",
+    "commandline",
+    "cli"
+  ],
+  "author": "lineus (lineus@gmail.com)",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/lineus/crepo/issues"
+  },
+  "homepage": "https://github.com/lineus/crepo#readme"
+}
