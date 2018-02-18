@@ -6,8 +6,7 @@ const request = require('request')
 const user = options.GHUSER
 const token = options.GHTOKEN
 const ua = options.UA
-console.log(options)
-process.exit(1)
+
 function sendCreateRequest (opts) {
   const uri = 'https://api.github.com/user/repos'
   const thisForm = {

@@ -1,6 +1,6 @@
 {
   "name": "crepo",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "uses github api to create a repo from the command line.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/lineus/crepo#readme",
   "dependencies": {
-    "dotenv": "^5.0.0",
     "commander": "^2.14.1",
     "request": "^2.83.0"
   },
