@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict'
-require('dotenv').config()
+const options = require(process.env.HOME + '/.env')
 const program = require('commander')
 const request = require('request')
-const user = process.env.GHUSER
-const pass = process.env.GHPASS
-const ua = process.env.UA
-
+const user = options.GHUSER
+const token = options.GHTOKEN
+const ua = options.UA
+console.log(options)
+process.exit(1)
 function sendCreateRequest (opts) {
   const uri = 'https://api.github.com/user/repos'
   const thisForm = {
@@ -21,7 +22,7 @@ function sendCreateRequest (opts) {
     },
     auth: {
       user: user,
-      pass: pass
+      pass: token
     },
     form: JSON.stringify(thisForm)
   }
