@@ -1,1 +1,4 @@
-# W I P
+## Usage:
+```
+$ crepo add -n 'myCoolRepo' -d 'does cool stuff.'
+```
