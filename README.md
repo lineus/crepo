@@ -1,6 +1,6 @@
 ## Usage:
 ```
-$ crepo add -n 'myCoolRepo' -d 'does cool stuff.' -p
+$ crepo -n 'myCoolRepo' -d 'does cool stuff.' -p
 clone: https://github.com/lineus/myCoolRepo.git
 $
 ```

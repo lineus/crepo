@@ -11,9 +11,9 @@ const { version } = require('./package.json')
 function sendCreateRequest (opts) {
   const uri = 'https://api.github.com/user/repos';
   const thisForm = {
-    'name': opts.name,
-    'description': opts.description,
-    'private': opts.private
+    name: opts.name,
+    description: opts.description,
+    private: opts.private
   };
 
   let rArgs = {
@@ -36,7 +36,7 @@ function sendCreateRequest (opts) {
   });
 }
 
-program.version(version).command('add')
+program.version(version)
   .description('add a new github repo')
   .option('-n, --name <str>', 'Repo Name')
   .option('-d, --description <str>', 'Repo Description')

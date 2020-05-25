@@ -1,6 +1,6 @@
 {
   "name": "crepo",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "uses github api to create a repo from the command line.",
   "main": "index.js",
   "scripts": {
