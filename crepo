@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict';
-const options = require(process.env.HOME + '/.env');
+const { options } = require(process.env.HOME + '/.env');
+console.dir(options);
 const program = require('commander');
-const request = require('request');
+const axios = require('axios');
 const user = options.GHUSER;
 const token = options.GHTOKEN;
 const ua = options.UA;
-const { version } = require('./package.json')
+const { version } = require('./package.json');
 
 function sendCreateRequest (opts) {
   const uri = 'https://api.github.com/user/repos';
@@ -18,22 +19,32 @@ function sendCreateRequest (opts) {
 
   let rArgs = {
     url: uri,
+    method: 'post',
     headers: {
       'User-Agent': ua
     },
     auth: {
-      user: user,
-      pass: token
+      username: user,
+      password: token
     },
-    form: JSON.stringify(thisForm)
+    data: JSON.stringify(thisForm)
   };
 
-  request.post(rArgs, function (err, res, json) {
-    if (err) { return console.error(err); }
-    if (!json) { return console.error(res.headers); }
-    let cloneUrl = JSON.parse(json, null, 2).clone_url;
-    return console.log(`clone: ${cloneUrl}`);
+  axios(rArgs).then(res => {
+    const { clone_url } = res.data;
+    console.log(`clone: ${clone_url}`);
+    process.exit(0);
+  }).catch(err => {
+    console.error(err);
+    process.exit(1);
   });
+
+  //   function (err, res, json) {
+  //   if (err) { return console.error(err); }
+  //   if (!json) { return console.error(res.headers); }
+  //   let cloneUrl = JSON.parse(json, null, 2).clone_url;
+  //   return console.log(`clone: ${cloneUrl}`);
+  // });
 }
 
 program.version(version)

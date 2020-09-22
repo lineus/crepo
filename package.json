@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/lineus/crepo#readme",
   "dependencies": {
-    "commander": "^2.14.1",
-    "request": "^2.83.0"
+    "axios": "^0.20.0",
+    "commander": "^2.14.1"
   },
   "bin": "crepo"
 }
